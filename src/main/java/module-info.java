@@ -1,7 +1,6 @@
 module com.example.java_giorgi_kurdadze {
     requires javafx.controls;
     requires javafx.fxml;
-    requires lombok;
     requires java.sql;
 
 

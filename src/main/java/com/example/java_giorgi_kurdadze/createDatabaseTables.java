@@ -7,15 +7,11 @@ import java.sql.Statement;
 
 public class createDatabaseTables {
 
-    private static String DB_URL = "jdbc:mysql://sql.freedb.tech:3306/freedb_java_test";
-    private static String DB_USER = "freedb_java_test";
-    private static String DB_PASSWORD = "8HxU4ZC7N!MnUn?";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/java_test";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "";
 
-    public static void main(String[] args) {
-        createTable();
-    }
-
-    private static void createTable() {
+    public static void createTable() {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
              Statement statement = connection.createStatement()) {
 
@@ -23,6 +19,7 @@ public class createDatabaseTables {
                     "id INT AUTO_INCREMENT PRIMARY KEY," +
                     "name VARCHAR(100) NOT NULL," +
                     "price DOUBLE NOT NULL," +
+                    "amount INT NOT NULL," +
                     "category VARCHAR(50) NOT NULL" +
                     ")";
 
